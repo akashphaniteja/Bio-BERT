@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% set active_page = "search" %}
+{% block content %}
+   <div class="container mt-5 main-details tm-bg-primary-dark tm-block tm-block-taller" id="tbl-div">
+     <div class="row tm-content-row-table">
+       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="div-message"></div>
+       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+         <div class="tm-product-table-container">
+            <div class="form-group">
+                <label for="comment">Search Abstract:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div> 
+            <button type="button" class="btn btn-success float-left">SEARCH</button>
+         </div>
+        </div>
+
+     </div>
+      
+     
+      <div id="result" class="row tm-content-row-table d-none">
+         <hr/>
+         <div class="col-12">
+            <div class="col-2">
+               <label><b>UID:</b></label>
+            </div>
+            <div class="col-4">
+               <label id="uid"></label>
+            </div>
+            <div class="col-2">
+               <label><b>External ID:</b></label>
+            </div>
+            <div class="col-4">
+               <label id="external-id"></label>
+            </div>
+         </div>
+      </div>
+
+      <div id="no-result" class="row tm-content-row-table d-none">
+         <hr/>
+         <div class="col-12">
+            <h4>No Result/s Found</h4>
+         </div>
+      </div>
+
+      <div class="modal" id="myModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <!-- Modal body -->
+             <div class="modal-body">
+               <center>
+                 <img src='static/img/loading.gif' width="300" height="300" />
+                 <br><br>
+                 Loading..
+               </center>
+             </div>  
+           </div>
+         </div>
+       </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Omdena RebootRx </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% if active_page == 'uploads' or active_page == 'search' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css') }}">
+    {% endif %}
+</head>
+
+<body>
+    <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars tm-nav-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse">
+                    <img src="{{ url_for('static', filename = 'img/omdena-logo.webp') }}" width="170" height="50" alt="previous" title="Previous" border="0">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link {{ 'active' if active_page == 'uploads' else '' }}" href="/">
+                                <i class="fa fa-upload"></i>
+                                Uploaded Annotations
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link {{ 'active' if active_page == 'search' else '' }}" href="/search">
+                                <i class="fa fa-search"></i>
+                                Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %}{% endblock %}
+
+        <footer class="tm-footer row tm-mt-small">
+            <div class="col-12 font-weight-light">
+                <p class="text-center text-white mb-0 px-4 small">
+                    Copyright &copy; <b>2021</b> All rights reserved.
+
+                </p>
+            </div>
+        </footer>
+    </div>
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/moment.min.js') }}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+
+    {% if active_page == 'uploads'  %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    {% elif active_page == 'search'  %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+    {% endif %}
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% set active_page = "uploads" %}
+{% block content %}
+   <div class="container mt-5 main-details tm-bg-primary-dark tm-block tm-block-taller" id="tbl-div">
+     <div class="row tm-content-row-table">
+       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="div-message"></div>
+       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+         <div class="tm-product-table-container">
+          <table class="table-report-task" id="tbl-uploaded-annotations" width="100%" style="font-size:10px;
+                        padding:0; margin:1px">
+                <thead>
+                  <tr>
+                    <th>Project</th>
+                    <th>Date</th>
+                    <th>Submitted By</th>
+                    <th>Description</th>
+                    <th>Task ID</th>
+                    <th>Upload Name</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+          </table>
+         </div>
+        </div>
+     </div>
+  </div>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body">
+          <center>
+            <img src='static/img/loading.gif' width="300" height="300" />
+            <br><br>
+            Loading..
+          </center>
+        </div>  
+      </div>
+    </div>
+  </div>
+{% endblock content %}

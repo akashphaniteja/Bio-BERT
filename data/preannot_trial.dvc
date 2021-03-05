@@ -1,0 +1,5 @@
+outs:
+- md5: e89e3d9df0135e796c96ab995dd3582e.dir
+  size: 831901
+  nfiles: 4
+  path: preannot_trial

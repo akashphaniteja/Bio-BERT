@@ -1,0 +1,5 @@
+outs:
+- md5: 6b2460dc0d2059f61c5c13c892b05f31.dir
+  size: 633221
+  nfiles: 5
+  path: validation

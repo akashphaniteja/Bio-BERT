@@ -1,0 +1,5 @@
+outs:
+- md5: 79cdc5567cb0e8cd5b583058d690b006.dir
+  size: 10722171
+  nfiles: 6
+  path: rct_data
